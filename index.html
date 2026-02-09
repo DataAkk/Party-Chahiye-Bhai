@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urgent Birthday Query 🎂</title>
+    <style>
+        body { background-color: #fef3c7; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; font-family: 'Arial', sans-serif; overflow: hidden; text-align: center; }
+        .container { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 85%; max-width: 400px; border: 3px solid #f59e0b; }
+        h1 { color: #d97706; font-size: 1.5rem; }
+        .buttons { margin-top: 30px; position: relative; height: 120px; width: 100%; }
+        button { padding: 12px 25px; font-size: 1.1rem; border: none; border-radius: 50px; cursor: pointer; position: absolute; transition: 0.1s; }
+        #yesBtn { background-color: #10b981; color: white; left: 10%; }
+        #noBtn { background-color: #ef4444; color: white; right: 10%; }
+        img { border-radius: 15px; margin-bottom: 10px; width: 100%; max-width: 200px; }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainCard">
+        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHJreGZid2d0NmI1eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/LpDmM2WXO6GfSeBVGL/giphy.gif" alt="Funny Party">
+        <h1>Are you giving me a massive party on your birthday? 🍕🔥</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="partyTime()">YES! 🎉</button>
+            <button id="noBtn" onmouseover="runAway()">NO 👎</button>
+        </div>
+        <p style="margin-top: 20px; font-weight: bold;">(Choose wisely... 🍟)</p>
+    </div>
+
+    <script>
+        function runAway() {
+            const noBtn = document.getElementById("noBtn");
+            const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.position = "fixed";
+            noBtn.style.left = x + "px";
+            noBtn.style.top = y + "px";
+        }
+
+        function partyTime() {
+            document.getElementById("mainCard").innerHTML = `
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHJreGZid2d0NmI1eHh4eHh4eHh4eHh4eHh4eHh4eHh4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/6nuiJjUYzqyT6/giphy.gif">
+                <h1 style="color: #059669;">GREAT CHOICE! 😍</h1>
+                <p>I've already prepared the menu:</p>
+                <ul style="text-align: left; display: inline-block;">
+                    <li>✅ Unlimited Pizza 🍕</li>
+                    <li>✅ Extra Cold Drinks 🥤</li>
+                    <li>✅ The most expensive Cake 🎂</li>
+                </ul>
+                <p><b>See you there! 😎</b></p>
+                <div style="margin-top: 15px; color: #d97706;">From: Kartik 🤟</div>
+            `;
+        }
+    </script>
+</body>
+</html>
